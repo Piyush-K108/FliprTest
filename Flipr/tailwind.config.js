@@ -23,7 +23,7 @@ module.exports = {
   },
   container: {
     padding: {
-      DEFAULT: '15px',
+      DEFAULT: '15.1px',
     },
   },
   plugins: [],
