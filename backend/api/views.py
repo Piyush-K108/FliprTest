@@ -82,7 +82,10 @@ def Shipments(request):
 @api_view(["GET"])
 def CustomerFilterCity(request, city):
     try:
-        Customers = Customer.objects.filter(city=city)
+        if city==None or city=="":
+           Customers = Customer.objects.all()  
+        else:
+            Customers = Customer.objects.filter(city=city)
         serializer = CustomerInfoSerializer(Customers, many=True)
         return Response({"data": serializer.data}, status=status.HTTP_200_OK)
 
