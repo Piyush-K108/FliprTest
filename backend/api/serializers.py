@@ -33,3 +33,8 @@ class CustomerAllPurchaseserializer(serializers.ModelSerializer):
         model = Customer
         fields = '__all__'
 
+class CustomerAllPurchase_Onlyserializer(serializers.ModelSerializer):
+    purchases = PurchaseOrderSerializer(many=True, read_only=True)
+    class Meta:
+        model = Customer
+        fields = '__all__'

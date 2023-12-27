@@ -97,7 +97,7 @@ def CustomerFilterCity(request, city):
 def CustomersAllPurchase(request):
     try:
         Customers = Customer.objects.all()
-        serializer = CustomerAllPurchaseserializer(Customers, many=True)
+        serializer = CustomerAllPurchase_Onlyserializer(Customers, many=True)
 
         return Response(serializer.data, status=status.HTTP_200_OK)
 
