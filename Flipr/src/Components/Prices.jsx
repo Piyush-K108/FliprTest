@@ -69,7 +69,7 @@ function Price() {
       .then((responseJson) => {
        
         const filteredData =
-          selectedYears.includes("all") || selectedCategory.includes("all") || NONE
+          selectedYears.includes("all") || selectedCategory.includes("all") 
             ? responseJson.prizes
             : responseJson.prizes.filter((prize) => {
                 return (
